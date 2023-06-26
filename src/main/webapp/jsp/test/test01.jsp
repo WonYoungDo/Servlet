@@ -31,8 +31,8 @@
 	<%
 		List<String> scoreList = Arrays.asList(new String[]{"X", "O", "O", "O", "X", "O", "O", "O", "X", "O"});
 		int totalScore = 0;
-		for(int i = 0; i < scoreList.size(); i++) {
-			if(scoreList.get(i) == "O") {
+		for(String ox : scoreList) {
+			if(ox.equals("O")) {
 				totalScore += 100 / scoreList.size();
 			} 
 		}
@@ -46,10 +46,10 @@
 	
 	<%-- 문제 3번 풀이 --%>
 	<%!
-		public int getSum() {
+		public int getSum(int number) {
 			
 			int sum = 0;
-			for(int i = 1; i <= 50; i++) {
+			for(int i = 1; i <= number; i++) {
 				sum += i;	
 			}
 			return sum;
@@ -57,7 +57,7 @@
 	%>
 	<%-- 문제 3번 답 --%>
 	<h2>3. 1부터 n까지의 합계를 구하는 함수</h2>
-	<h4>1에서 50까지의 합은 <%= getSum() %></h4>
+	<h4>1에서 50까지의 합은 <%= getSum(50) %></h4>
 	<br>
 	
 	
@@ -69,7 +69,7 @@
 		
 		year = Integer.parseInt(birthDay.substring(0, 4));
 		
-		age = 2023 - year - 1;
+		age = 2023 - year + 1;
 	%>
 	<%-- 문제 4번 답 --%>
 	<h2>4. 나이 구하기</h2>
