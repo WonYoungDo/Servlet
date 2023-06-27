@@ -9,37 +9,39 @@
 </head>
 <body>
 	<% 
-		int value = Integer.parseInt(request.getParameter("value"));
-		String[] distanceValue = request.getParameterValues("value");
+		int cm = Integer.parseInt(request.getParameter("cm"));
+		String[] distance = request.getParameterValues("distance");
 		
-		double result = 0;
-		for(int i = 0; i < distanceValue.length; i++) {
-			if(distanceValue[i].equals("inch")) {
+		String result = "";
+		for(int i = 0; i < distance.length; i++) {
+			if(distance[i].equals("inch")) {
 				// inch = value / 2.54
-				result = value / 2.54;
-			} else if(distanceValue[i].equals("yard")) {
+				double inch = cm / 2.54;	
+				result += inch + " inch<br>";
+			} else if(distance[i].equals("yard")) {
 				// yard = value / 91.44
-				result = value / 91.44;		
-			} else if(distanceValue[i].equals("feet")) {
+				double yard = cm / 91.44;
+				result += yard + " yard<br>";
+			} else if(distance[i].equals("feet")) {
 				// feet = value / 30.48
-				result = value / 30.48;		
+				double feet = cm / 30.48;
+				result += feet + " feet<br>";
 			} else {
 				// meter = value / 100
-				result = value / 100;		
+				double meter = cm / 100.0;
+				result += meter + " meter<br>";
 			}
 		}
 	%>
 	<div class="container">
 		<h3>변환 결과</h3>
-		<h4><%= value %>cm</h4>
+		<h4><%= cm %>cm</h4>
+		<hr>
+		<h4><%= result %></h4>
 	</div>
-	<hr>
-	<div>
-		<h4><%= result %> in</h4>
-		<h4><%= result %> yd</h4>
-		<h4><%= result %> ft</h4>
-		<h4><%= result %> m</h4>	
-	</div>
+	
+		
+	
 	
 	
 	
