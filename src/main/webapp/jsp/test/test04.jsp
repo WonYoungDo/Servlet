@@ -12,33 +12,31 @@
 		int number1 = Integer.parseInt(request.getParameter("number1"));
 		int number2 = Integer.parseInt(request.getParameter("number2"));
 		
-		String calculate = request.getParameter("calculate");
-		String[] operatorArray = request.getParameterValues("calculate");
+		String operator = request.getParameter("operator");
 		
-		String operator = null;
+		char sign = '0';
 		double result = 0;
-		for(int i = 0; i < operatorArray.length; i++) {
-			if(operatorArray[i].equals("plus")) { 			// +일때
-				result = number1 + number2;
-				operator = "+";
-			} else if(operatorArray[i].equals("subtract")) { // -일때
-				result = number1 - number2;
-				operator = "-";
-			} else if(operatorArray[i].equals("multiply")) { // X일떄
-				result = number1 * number2;
-				operator = "X";
-			} else {									// %일때
-				result = number1 / number2;
-				operator = "%";
-			}
+		
+		if(operator.equals("plus")) { 			// +일때
+			result = number1 + number2;
+			sign = '+';
+		} else if(operator.equals("minus")) { // -일때
+			result = number1 - number2;
+			sign = '-';
+		} else if(operator.equals("multiply")) { // X일떄
+			result = number1 * number2;
+			sign = 'X';
+		} else {									// %일때
+			result = number1 / number2;
+			sign = '%';
 		}
+		
 	
 	%>
 	<div class="container">
 		<h3 class="font-weight-bold">계산 결과</h3>
-		<div class="d-flex">
-			<h1 class="mr-2"><%= number1 + " " + operator + " " + number2 %> =</h1>
-			<h1 class="text-primary"><%= result %></h1>		
+		<div>
+			<h1><%= number1 + " " + sign + " " + number2 %> = <span class="text-primary"><%= result %></span></h1> 		
 		</div>
 	</div>
 	

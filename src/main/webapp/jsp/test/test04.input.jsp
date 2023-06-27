@@ -11,16 +11,16 @@
 	<form method="post" action="/jsp/test/test04.jsp">
 		<div class="container">
 			<h2>사칙연산</h2>
-			<div class="d-flex">
-				<input type="text" name="number1" class="form-control col-4">
-				<select name="calculate" class="form-control col-3 mr-1 ml-1">
+			<div class="d-flex col-5">
+				<input type="text" name="number1" class="form-control">
+				<select name="operator" class="form-control col-2 mr-1 ml-1">
 					<option value="plus">+</option>
-					<option value="subtract">-</option>
+					<option value="minus">-</option>
 					<option value="multiply">X</option>				
 					<option value="divide">%</option>				
 				</select>
-				<input type="text" name="number2" class="form-control col-4 mr-1">
-				<button type="submit" class="form-control btn-success col-1">계산</button>
+				<input type="text" name="number2" class="form-control mr-1">
+				<button type="submit" class="btn form-control btn-success">계산</button>
 			</div>
 		</div>
 	
