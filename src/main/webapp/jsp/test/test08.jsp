@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>책목록</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -68,27 +68,26 @@
 		<h2 class="text-center pt-3">책 목록</h2>
 		<table class="table">
 			<thead class="text-center">
-				<th>id</th>
-				<th>표지</th>
-				<th>제목</th>
+				<tr>
+					<th>id</th>
+					<th>표지</th>
+					<th>제목</th>
+				</tr>	
 			</thead>
 			
-			<% 
-				for(int i = 0; i < list.size(); i++) {
-			%>
+			<tbody class="text-center">
 			
-				<tbody class="text-center">
-					<td><%= list.get(i).get("id") %></td>
-					<td>
-						<img height="100" alt="<%= list.get(i).get("title") %>" src="<%= list.get(i).get("image") %>">
-					</td>
-					<td ><h1><a href="/jsp/test/test08.input.jsp"><%= list.get(i).get("title") %></a></h1></td>
-				</tbody>
-					
-			<% } %>
+				<% for(Map<String, Object> book : list) { %>
 			
-		
-			
+					<tr>
+						<td><%= book.get("id") %></td>
+						<td>
+							<img height="100" alt="<%= book.get("title") %>" src="<%= book.get("image") %>">
+						</td>
+						<td ><h1><a href="/jsp/test/test08.input.jsp?id=<%= book.get("id") %>"><%= book.get("title") %></a></h1></td>
+					</tr>
+				<% } %>
+			</tbody>
 		</table>		
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
