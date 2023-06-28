@@ -12,7 +12,7 @@
 		<div>
 			<h3>길이 변환</h3>
 			<div class="d-flex">
-				<input type="text" class="mr-1 form-control col-3"><label class="d-flex align-items-end">cm</label>			
+				<input type="text" class="mr-1 form-control col-3" name="value"><label class="d-flex align-items-end">cm</label>			
 			</div>
 			<div>
 				<label>인치<input type="checkbox" name="distance" value="inch"></label>
