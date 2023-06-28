@@ -35,7 +35,7 @@ public class Test10Controller extends HttpServlet {
 		out.println("<html><head><title>로그인</title><head><body>");
 		
 		if(!id.equals(userMap.get("id"))) {
-			out.println("<h3>i아이디가 일치하지 않습니다.</h3>");			
+			out.println("<h3>i아이디가 일치하지 않습니다.</h3>");
 		} else if(!password.equals(userMap.get("password"))) {
 			out.println("<h3>비밀번호가 일치하지 않습니다.</h3>");			
 		} else {
