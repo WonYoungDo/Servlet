@@ -53,7 +53,7 @@
 	%>
 
 	
-	<jsp:include page="section.jsp" />
+	
 	<form method="post" action="/jspT/test/test01/nav.jsp">
 		<table class="table text-center">
 				<thead>
@@ -65,9 +65,10 @@
 				</thead>
 				<tbody>
 				<%
-					
+					String category = request.getParameter("category");
 					for(Map<String, String> program : list) {
-						if(program.get("category").equals("지상파")) {		
+						String chooseCategory = program.get("category");
+						if(category == chooseCategory) {		
 				%>
 							<tr>
 								<td><%= program.get("ch") %></td>
