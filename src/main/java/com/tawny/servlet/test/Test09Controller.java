@@ -2,6 +2,8 @@ package com.tawny.servlet.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +28,7 @@ public class Test09Controller extends HttpServlet {
 		out.println("<div>지원 내용 <br>" + introduce + "</div>");
 		out.println("</body></html>");
 		
-		
-		
+	
 	}
 	
 	
