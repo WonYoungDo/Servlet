@@ -25,7 +25,11 @@ public class EX01Controller extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		MysqlService mysqlService = new MysqlService();
+//		MysqlService mysqlService = new MysqlService();
+		MysqlService mysqlService = MysqlService.getInstance();
+		
+		
+		
 		// 접속
 		mysqlService.connect();
 		String selectQuery = "SELECT * FROM `used_goods`";
@@ -44,6 +48,16 @@ public class EX01Controller extends HttpServlet {
 			
 			e.printStackTrace();
 		}
+		
+		
+		String insertQuery = "INSERT INTO `used_goods`\r\n"
+				+ "(`sellerId`, `title`, `price`, `description`, `image`, `createdAT`, `updatedAT`)\r\n"
+				+ "VALUE\r\n"
+				+ "(3, '고양이 간식 팝니다', 2000, '저희 고양이가 까탌스러워요', NULL);";
+		int count = mysqlService.update(insertQuery);
+		
+		out.println("<div>삽입된 행의 개수 : " + count + "</div>");
+		
 		out.println("</body></html>");
 		
 		
