@@ -20,13 +20,13 @@
 		if(operator.equals("plus")) { 			// +일때
 			result = number1 + number2;
 			sign = '+';
-		} else if(operator.equals("minus")) { // -일때
+		} else if(operator.equals("minus")) { 	// -일때
 			result = number1 - number2;
 			sign = '-';
-		} else if(operator.equals("multiply")) { // X일떄
+		} else if(operator.equals("multiply")) {// X일떄
 			result = number1 * number2;
 			sign = 'X';
-		} else {									// %일때
+	} else {									// %일때
 			result = number1 / number2;
 			sign = '%';
 		}

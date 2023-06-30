@@ -3,7 +3,9 @@ package com.tawny.servlet.test;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +33,7 @@ public class Test03Controller extends HttpServlet {
 		out.println("기사 입력시간 : " + formatToday);
 		out.println("<hr>");
 		out.println("<p>끝</p></body></html>");
-				
+			
 		
 	}
 }
