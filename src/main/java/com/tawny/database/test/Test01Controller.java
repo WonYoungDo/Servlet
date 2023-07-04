@@ -27,17 +27,17 @@ public class Test01Controller extends HttpServlet {
 		String selectQuery = "SELECT * FROM `real_estate`";
 		ResultSet resultSet = mysqlService.select(selectQuery);
 		
-<<<<<<< HEAD
-		while(resultSet.next()) {
-			int resultSet.getInt("realtorld");
-			resultSet.getString("");
-			resultSet.getInt("");
-			resultSet.getString("");
-			resultSet.getInt("");
-			resultSet.getInt("");
-		}
+
+//		while(resultSet.next()) {
+//			int resultSet.getInt("realtorld");
+//			resultSet.getString("");
+//			resultSet.getInt("");
+//			resultSet.getString("");
+//			resultSet.getInt("");
+//			resultSet.getInt("");
+//		}
 		
-=======
+
 		out.println("<html><head><title>매물리스트</title></head><body>");
 			try {
 				while(resultSet.next()) {
@@ -60,7 +60,7 @@ public class Test01Controller extends HttpServlet {
 		out.println("</body></html>");		
 	
 			
->>>>>>> 12c3324d15e372ea5ac97b1aad2cc57abb06fb02
+
 		
 	}
 }
