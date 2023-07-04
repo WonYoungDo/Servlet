@@ -25,7 +25,7 @@ public class Test01Controller extends HttpServlet {
 		ResultSet resultSet = mysqlService.select(selectQuery);
 		
 		while(resultSet.next()) {
-			resultSet.getInt("realtorld");
+			int resultSet.getInt("realtorld");
 			resultSet.getString("");
 			resultSet.getInt("");
 			resultSet.getString("");
